@@ -1,0 +1,7 @@
+./log
+./checkpoints
+./.idea
+.idea
+checkpoints
+log
+model/__pycache__

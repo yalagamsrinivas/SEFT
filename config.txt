@@ -1,0 +1,6 @@
+--paths_text
+text/tweet
+--paths_technical
+technical
+--model_name
+seft_v4
