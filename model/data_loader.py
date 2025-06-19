@@ -13,19 +13,21 @@ from model.config_loader import path, config, logger
 
 
 class StockData(Dataset):
-    """
-    # A textual-numerical Dataset inherited from Pytorch Dataset.
-    It generate the feature and label of multi-stock for consecutive dates.
+    """A textual-numerical :class:`~torch.utils.data.Dataset`.
 
-    # It doesn't embed words, but only ids for corresponding embedding method.
-    So word/sentence embedding should be used in the model.
+    It generates the features and labels of multiple stocks for consecutive
+    dates. Words are not embedded in this loader; only token IDs for the chosen
+    embedding method are returned, so word or sentence embeddings should be
+    applied in the model.
 
-    # Output:
-        text: token ids for s specific embedding, in the shape of (stock, day, message, word)
-        message_count: number of message of each stock for each day, shape (stock, day)
-        word_count: number of words of each message of each stock for each day, shape (stock, day, message)
-        technical: technical features, in the shape of (stock, day, feature)
-        label: label, in the shape of (stock, day)
+    Returns
+    -------
+    text : ``Tensor``
+        Token IDs with shape ``(stock, day, message, word)``.
+    technical : ``Tensor``
+        Technical features with shape ``(stock, day, feature)``.
+    label : ``Tensor``
+        Binary labels with shape ``(stock, day)``.
 
     """
 
